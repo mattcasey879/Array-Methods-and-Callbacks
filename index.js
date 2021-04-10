@@ -102,7 +102,11 @@ Use the higher order function getAverageGoals to do the following:
 */
 
 function getAverageGoals(cb) {
-   let teams = getFinals(arr);
+   let teams = cb;
+   let totalScore = teams.map(i => i['Home Team Goals'] + i['Away Team Goals'])
+   let result = totalScore.reduce((sum,i,) => (sum += i / 19),0);
+   let average = result.toFixed(2); 
+  return average  
 }
 
 
